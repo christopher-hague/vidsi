@@ -14,13 +14,13 @@ The Vidsi schema can be generated with the following:
 CREATE TABLE Subscribers
 (
 
-    subscriber_id INT NOT NULL,
+  subscriber_id INT NOT NULL,
   
-    name VARCHAR(30) NOT NULL,
+  name VARCHAR(30) NOT NULL,
   
-    available_stream_mins INT NOT NULL,
+  available_stream_mins INT NOT NULL,
   
-    PRIMARY KEY (subscriber_id)
+  PRIMARY KEY (subscriber_id)
   
 );
 
