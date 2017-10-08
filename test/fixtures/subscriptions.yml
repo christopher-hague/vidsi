@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment_method: MyString
+  start_date: 
+  subscription_tier_id: 1
+
+two:
+  payment_method: MyString
+  start_date: 
+  subscription_tier_id: 1

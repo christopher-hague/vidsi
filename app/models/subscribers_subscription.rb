@@ -1,0 +1,3 @@
+class SubscribersSubscription < ApplicationRecord
+  
+end

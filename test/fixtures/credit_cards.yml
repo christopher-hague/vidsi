@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_number: MyString
+  subscriber_id: 1
+
+two:
+  card_number: MyString
+  subscriber_id: 1

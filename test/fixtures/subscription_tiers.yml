@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  monthly_streaming_limit: 1
+  price: 1
+  name: MyString
+
+two:
+  monthly_streaming_limit: 1
+  price: 1
+  name: MyString
