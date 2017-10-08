@@ -37,21 +37,13 @@ CREATE TABLE Subscription_Tiers
 );
 
 CREATE TABLE Invoices
-
 (
-
   invoice_id INT NOT NULL,
-  
   balance INT NOT NULL,
-  
   due_date DATE NOT NULL,
-  
   subscriber_id INT NOT NULL,
-  
   PRIMARY KEY (invoice_id),
-  
   FOREIGN KEY (subscriber_id) REFERENCES Subscribers(subscriber_id)
-  
 );
 
 CREATE TABLE Credit_Cards
