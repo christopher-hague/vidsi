@@ -96,3 +96,17 @@ CREATE TABLE Subscriber_Subscriptions
   FOREIGN KEY (subscription_id) REFERENCES Subscriptions(subscription_id)
 );
 ```
+
+#### SQL Query
+When passing a subscriber.id to the AND statement, the following SQL query will return the 20 most watched videos by subscriber from January 2017 for that subscriber:
+
+```
+SELECT DISTINCT subscribers.name AS subscriber, videos.title AS video_title, streams.date, COUNT(*) AS streams
+FROM subscribers
+INNER JOIN streams ON streams.subscriber_id = subscribers.id
+INNER JOIN videos ON videos.id = streams.video_id
+WHERE streams.date = "January 2017"
+AND subscribers.id = -- insert subscriber.id
+GROUP BY videos.title
+ORDER BY streams DESC LIMIT 20;
+`
