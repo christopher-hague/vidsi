@@ -74,7 +74,7 @@ CREATE TABLE subscriber_subscriptions(
 ```
 
 #### SQL Query
-When passing a subscriber.id to the AND statement, the following SQL query will return the names of the 20 most watched videos from January 2017 for that subscriber, as well as the number of times each Video was streamed:
+When passing a subscriber.id to the `AND` statement, the following SQL query will return the names of the 20 most watched videos from January 2017 for that subscriber, as well as the number of times each Video was streamed:
 
 ```
 SELECT videos.title AS video_title, COUNT(*) AS streams
