@@ -19,7 +19,7 @@ The Vidsi schema can be generated with the following:
 CREATE TABLE subscribers(
   id INTEGER PRIMARY KEY,
   name TEXT,
-  available_stream_mins INTEGER
+  available_stream_time INTEGER
 );
 
 CREATE TABLE content_providers(
@@ -30,7 +30,7 @@ CREATE TABLE content_providers(
 
 CREATE TABLE subscription_tiers(
   id INTEGER PRIMARY KEY,
-  monthly_streaming_mins INTEGER,
+  monthly_streaming_limit INTEGER,
   price INTEGER,
   name TEXT
 );
@@ -51,7 +51,7 @@ CREATE TABLE credit_cards(
 CREATE TABLE videos(
   id INTEGER PRIMARY KEY,
   title TEXT,
-  minutes INTEGER,
+  length INTEGER,
   content_provider_id INTEGER
 );
 
@@ -69,7 +69,7 @@ CREATE TABLE subscriptions(
   subscription_tier_id INTEGER
 );
 
-CREATE TABLE subscriber_subscriptions(
+CREATE TABLE subscribers_subscriptions(
   id INTEGER PRIMARY KEY,
   subscriber_id INTEGER,
   subscription_id INTEGER
