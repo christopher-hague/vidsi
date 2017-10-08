@@ -92,14 +92,14 @@ ORDER BY streams DESC LIMIT 20;
 * Altering the `WHERE streams.date = ` statement enables the query to search for videos from any date
 
 #### Algorithm(Ruby)
-The relationship between each table has been established via the models. Given that an Invoice belongs to a Subscriber and a Subscriber can have many Invoices, we can find each Subscriber with an overdue balance by filtering each Invoice that has a balance greater than 0 AND has a due_date that falls before today's date.
+The relationship between each table has been established via the models. Given that an Invoice belongs to a Subscriber and a Subscriber can have many Invoices, we can find each Subscriber with an overdue balance by filtering each Invoice that has a `balance` greater than 0 AND has a `due_date` that falls before today's date.
 
 Find all overdue Invoices:
-* Invoices are initialized with a due_date, which will be determined by the start date of the Subscription. For example, a Subscriber with a Subscription whose start_date is March 1st can expect to have an Invoice with a due_date of April 1st. Filtering the Invoices whose balance is greater than 0 and have a due_date that is less than the current date will return a list of Invoices that are overdue:
+* Invoices are initialized with a `due_date`, which will be determined by the `start_date` of the Subscription. For example, a Subscriber with a Subscription whose `start_date` is March 1st could expect to have an Invoice with a `due_date` of April 1st. Filtering the Invoices whose `balance` is greater than 0 and have a `due_date` that falls prior to today's date will return a list of Invoices that are overdue:
 
-`overdue_invoices = Invoice.all.select { |invoice| invoice.balance > 0  && invoice.due_date < Time.zone.now }`
+`overdue_invoices = Invoice.all.select { |invoice| invoice.balance > 0 && invoice.due_date < Time.zone.now }`
 
 Find all Subscribers with an overdue balance:
-* Once we have the list of overdue Invoices, we can associate a Subscriber to the overdue Invoice using the subscriber_id as a foreign key on each Invoice:
+* Once we have the list of overdue Invoices, we can associate a Subscriber to the overdue Invoice using the `subscriber_id` foreign key on each Invoice:
 
 `overdue_subscribers = overdue_invoices.map { |invoice| Subscriber.find(invoice.subscriber_id) }.uniq`
