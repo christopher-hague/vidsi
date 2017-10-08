@@ -11,8 +11,8 @@ The Vidsi schema can be seen here:
 The Vidsi schema can be generated with the following: 
 
 #### Generate Vidsi Schema
-CREATE TABLE Subscribers
-(
+  CREATE TABLE Subscribers
+  (
 
     subscriber_id INT NOT NULL,
   
@@ -22,7 +22,7 @@ CREATE TABLE Subscribers
   
     PRIMARY KEY (subscriber_id)
   
-);
+  );
 
 CREATE TABLE Content_Providers
 (
