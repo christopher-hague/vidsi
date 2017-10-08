@@ -27,55 +27,48 @@ CREATE TABLE content_providers
   concurrent_stream_limit INTEGER
 );
 
-CREATE TABLE subscription_tiers
-(
+CREATE TABLE subscription_tiers(
   id INTEGER PRIMARY KEY,
   monthly_streaming_mins INTEGER,
   price INTEGER,
   name TEXT
 );
 
-CREATE TABLE invoices
-(
+CREATE TABLE invoices(
   id INTEGER PRIMARY KEY,
   balance INTEGER,
   due_date DATE,
   subscriber_id INTEGER
 );
 
-CREATE TABLE credit_cards
-(
+CREATE TABLE credit_cards(
   id INTEGER PRIMARY KEY,
   card_number TEXT,
   subscriber_id INTEGER
 );
 
-CREATE TABLE videos
-(
+CREATE TABLE videos(
   id INTEGER PRIMARY KEY,
   title TEXT,
   minutes INTEGER,
   content_provider_id INTEGER
 );
 
-CREATE TABLE streams
-(
+CREATE TABLE streams(
   id INTEGER PRIMARY KEY,
   date DATE,
   subscriber_id INTEGER,
   video_id INTEGER
 );
 
-CREATE TABLE subscriptions
-(
+CREATE TABLE subscriptions(
   id INTEGER PRIMARY KEY,
   payment_method TEXT,
   start_date DATE,
   subscription_tier_id INTEGER
 );
 
-CREATE TABLE subscriber_subscriptions
-(
+CREATE TABLE subscriber_subscriptions(
   id INTEGER PRIMARY KEY,
   subscriber_id INTEGER,
   subscription_id INTEGER
