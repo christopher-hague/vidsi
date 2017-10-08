@@ -9,15 +9,16 @@
 
 #### Generate Vidsi Schema
 The Vidsi schema can be generated with the following:
+
 CREATE TABLE Subscribers(
 
-  subscriber_id INT NOT NULL,
+  &nbsp;&nbsp; subscriber_id INT NOT NULL,
   
-  name VARCHAR(30) NOT NULL,
+  &nbsp;&nbsp; name VARCHAR(30) NOT NULL,
   
-  available_stream_mins INT NOT NULL,
+  &nbsp;&nbsp; available_stream_mins INT NOT NULL,
   
-  PRIMARY KEY (subscriber_id)
+  &nbsp;&nbsp; PRIMARY KEY (subscriber_id)
   
 );
 
