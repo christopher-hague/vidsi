@@ -141,5 +141,6 @@ CREATE TABLE Subscriber_Subscriptions(
   &nbsp;&nbsp; FOREIGN KEY (subscriber_id) REFERENCES Subscribers(subscriber_id),
   
   &nbsp;&nbsp; FOREIGN KEY (subscription_id) REFERENCES Subscriptions(subscription_id)
+  
 );
 
