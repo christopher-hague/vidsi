@@ -10,7 +10,7 @@
 #### Generate Vidsi Schema
 The Vidsi schema can be generated with the following:
 
-`CREATE TABLE Subscribers(
+```CREATE TABLE Subscribers(
 
   &nbsp;&nbsp; subscriber_id INT NOT NULL,
   
@@ -142,5 +142,5 @@ CREATE TABLE Subscriber_Subscriptions(
   
   &nbsp;&nbsp; FOREIGN KEY (subscription_id) REFERENCES Subscriptions(subscription_id)
   
-);`
+);```
 
