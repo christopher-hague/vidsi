@@ -1,4 +1,6 @@
-### This repo contains the relational database structure to support the Vidsi application requirements.
+This repo contains the relational database structure to support the Vidsi application requirements. Table relations have been established in the models. Feel free to create subcribers, subscriptions, invoices, etc. via the rails console to make your own queries.
+* Start rails server with `rails s`
+* Enter rails console with `rails c`
 
 #### Vidsi ERD
 ![vidsi_erd](https://user-images.githubusercontent.com/22860105/31319513-2175686e-ac2a-11e7-9d0e-10e592b46978.png)
