@@ -11,89 +11,72 @@
 The Vidsi schema can be generated with the following:
 
 ```
-CREATE TABLE Subscribers
+CREATE TABLE subscribers
 (
-  subscriber_id INT NOT NULL,
-  name VARCHAR(30) NOT NULL,
-  available_stream_mins INT NOT NULL,
-  PRIMARY KEY (subscriber_id)
+  id INTEGER PRIMARY KEY,
+  name TEXT,
+  available_stream_mins INTEGER
 );
 
-CREATE TABLE Content_Providers
+CREATE TABLE content_providers
 (
-  content_provider_id INT NOT NULL,
-  name VARCHAR(30) NOT NULL,
-  concurrent_stream_limit INT NOT NULL,
-  PRIMARY KEY (content_provider_id)
+  id INTEGER PRIMARY KEY,
+  name TEXT,
+  concurrent_stream_limit INTEGER
 );
 
-CREATE TABLE Subscription_Tiers
+CREATE TABLE subscription_tiers
 (
-  subscription_tier_id INT NOT NULL,
-  monthly_streaming_mins INT NOT NULL,
-  price INT NOT NULL,
-  name VARCHAR(30) NOT NULL,
-  PRIMARY KEY (subscription_tier_id)
+  id INTEGER PRIMARY KEY,
+  monthly_streaming_mins INTEGER,
+  price INTEGER,
+  name TEXT
 );
 
-CREATE TABLE Invoices
+CREATE TABLE invoices
 (
-  invoice_id INT NOT NULL,
-  balance INT NOT NULL,
-  due_date DATE NOT NULL,
-  subscriber_id INT NOT NULL,
-  PRIMARY KEY (invoice_id),
-  FOREIGN KEY (subscriber_id) REFERENCES Subscribers(subscriber_id)
+  id INTEGER PRIMARY KEY,
+  balance INTEGER,
+  due_date DATE,
+  subscriber_id INTEGER
 );
 
-CREATE TABLE Credit_Cards
+CREATE TABLE credit_cards
 (
-  credit_card_id INT NOT NULL,
-  card_number INT NOT NULL,
-  subscriber_id INT NOT NULL,
-  PRIMARY KEY (credit_card_id),
-  FOREIGN KEY (subscriber_id) REFERENCES Subscribers(subscriber_id)
+  id INTEGER PRIMARY KEY,
+  card_number TEXT,
+  subscriber_id INTEGER
 );
 
-CREATE TABLE Videos
+CREATE TABLE videos
 (
-  video_id INT NOT NULL,
-  title VARCHAR(30) NOT NULL,
-  minutes INT NOT NULL,
-  content_provider_id INT NOT NULL,
-  PRIMARY KEY (video_id),
-  FOREIGN KEY (content_provider_id) REFERENCES Content_Providers(content_provider_id)
+  id INTEGER PRIMARY KEY,
+  title TEXT,
+  minutes INTEGER,
+  content_provider_id INTEGER
 );
 
-CREATE TABLE Streams
+CREATE TABLE streams
 (
-  stream_id INT NOT NULL,
-  date DATE NOT NULL,
-  subscriber_id INT NOT NULL,
-  video_id INT NOT NULL,
-  PRIMARY KEY (stream_id),
-  FOREIGN KEY (subscriber_id) REFERENCES Subscribers(subscriber_id),
-  FOREIGN KEY (video_id) REFERENCES Videos(video_id)
+  id INTEGER PRIMARY KEY,
+  date DATE,
+  subscriber_id INTEGER,
+  video_id INTEGER
 );
 
-CREATE TABLE Subscriptions
+CREATE TABLE subscriptions
 (
-  subscription_id INT NOT NULL,
-  payment_method VARCHAR(30) NOT NULL,
-  start_date DATE NOT NULL,
-  subscription_tier_id INT NOT NULL,
-  PRIMARY KEY (subscription_id),
-  FOREIGN KEY (subscription_tier_id) REFERENCES Subscription_Tiers(subscription_tier_id)
+  id INTEGER PRIMARY KEY,
+  payment_method TEXT,
+  start_date DATE,
+  subscription_tier_id INTEGER
 );
 
 CREATE TABLE Subscriber_Subscriptions
 (
-  subscriber_subscription_id INT NOT NULL,
-  subscriber_id INT NOT NULL,
-  subscription_id INT NOT NULL,
-  PRIMARY KEY (subscriber_subscription_id),
-  FOREIGN KEY (subscriber_id) REFERENCES Subscribers(subscriber_id),
-  FOREIGN KEY (subscription_id) REFERENCES Subscriptions(subscription_id)
+  id INTEGER PRIMARY KEY,
+  subscriber_id INTEGER,
+  subscription_id INTEGER
 );
 ```
 
