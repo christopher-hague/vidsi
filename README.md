@@ -13,15 +13,13 @@ This repo contains the relational database structure to support the Vidsi applic
 The Vidsi schema can be generated with the following:
 
 ```
-CREATE TABLE subscribers
-(
+CREATE TABLE subscribers(
   id INTEGER PRIMARY KEY,
   name TEXT,
   available_stream_mins INTEGER
 );
 
-CREATE TABLE content_providers
-(
+CREATE TABLE content_providers(
   id INTEGER PRIMARY KEY,
   name TEXT,
   concurrent_stream_limit INTEGER
