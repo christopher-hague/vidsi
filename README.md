@@ -81,18 +81,21 @@ CREATE TABLE subscriber_subscriptions
 ```
 
 #### SQL Query
-When passing a subscriber.id to the AND statement, the following SQL query will return the 20 most watched videos by subscriber from January 2017 for that subscriber:
+When passing a subscriber.id to the AND statement, the following SQL query will return the names of the 20 most watched videos from January 2017 for that subscriber, as well as the number of times each Video was streamed:
 
 ```
-SELECT DISTINCT subscribers.name AS subscriber, videos.title AS video_title, streams.date, COUNT(*) AS streams
+SELECT videos.title AS video_title, COUNT(*) AS streams
 FROM subscribers
 INNER JOIN streams ON streams.subscriber_id = subscribers.id
 INNER JOIN videos ON videos.id = streams.video_id
 WHERE streams.date = "January 2017"
-AND subscribers.id = -- insert subscriber.id here
+AND subscribers.id = -- insert subscriber.id
 GROUP BY videos.title
 ORDER BY streams DESC LIMIT 20;
 ```
+
+* Altering the `WHERE streams.date = ` statement enables the query to search for videos from any date
+
 #### Algorithm(Ruby)
 The relationship between each table has been established via the models. Given that an Invoice belongs to a Subscriber and a Subscriber can have many Invoices, we can find each Subscriber with an overdue balance by filtering each Invoice that has a balance greater than 0 AND has a due_date that falls before today's date.
 
