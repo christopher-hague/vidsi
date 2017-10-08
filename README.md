@@ -1,4 +1,4 @@
-This repo contains the relational database structure to support the Vidsi application requirements. Table relations have been established in the models. Feel free to create subcribers, subscriptions, invoices, etc. via the rails console to make your own queries.
+This repo contains the relational database structure to support the Vidsi application requirements as well as a mini Rails application that can create, update, delete and select data from each of the tables. Table relations have been established through the models in the Rails API. Feel free to create subcribers, subscriptions, invoices, etc. via the rails console to make your own queries.
 * Migrate pending migration files with `rake db:migrate`
 * Start rails server with `rails s`
 * Enter rails console with `rails c`
@@ -9,7 +9,7 @@ This repo contains the relational database structure to support the Vidsi applic
 ![vidsi_erd](https://user-images.githubusercontent.com/22860105/31319513-2175686e-ac2a-11e7-9d0e-10e592b46978.png)
 
 ###### Vidsi Schema
-![vidsi_schema](https://user-images.githubusercontent.com/22860105/31320893-b7f90838-ac41-11e7-854b-46dc37591686.png)
+![vidsi_schema](https://user-images.githubusercontent.com/22860105/31321328-1480bf8a-ac4a-11e7-96b2-086b744da12f.png)
 
 
 ###### Generate Vidsi Schema
