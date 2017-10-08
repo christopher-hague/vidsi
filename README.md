@@ -1,23 +1,21 @@
-This repo contains the relational database structure to support the Vidsi application requirements.
+###This repo contains the relational database structure to support the Vidsi application requirements.
 
-The Vidsi ERD can be seen here:
 #### Vidsi ERD
 ![vidsi_erd](https://user-images.githubusercontent.com/22860105/31319513-2175686e-ac2a-11e7-9d0e-10e592b46978.png)
 
-The Vidsi schema can be seen here:
 #### Vidsi Schema
 ![vidsi_schema](https://user-images.githubusercontent.com/22860105/31319514-23358cf6-ac2a-11e7-955a-608d5accd4c2.png)
 
-The Vidsi schema can be generated with the following: 
 
 #### Generate Vidsi Schema
-  CREATE TABLE Subscribers
-  (
-    subscriber_id INT NOT NULL,
-    name VARCHAR(30) NOT NULL,
-    available_stream_mins INT NOT NULL,
-    PRIMARY KEY (subscriber_id)
-  );
+The Vidsi schema can be generated with the following: 
+CREATE TABLE Subscribers
+(
+  subscriber_id INT NOT NULL,
+  name VARCHAR(30) NOT NULL,
+  available_stream_mins INT NOT NULL,
+  PRIMARY KEY (subscriber_id)
+);
 
 CREATE TABLE Content_Providers
 (
