@@ -93,7 +93,7 @@ AND subscribers.id = -- insert subscriber.id here
 GROUP BY videos.title
 ORDER BY streams DESC LIMIT 20;
 ```
-#### Algorithm
+#### Algorithm(Ruby)
 The relationship between each table has been established via the models. Given that an Invoice belongs to a Subscriber and a Subscriber can have many Invoices, we can find each Subscriber with an overdue balance by filtering each Invoice that has a balance greater than 0 AND has a due_date that falls before today's date.
 
 Find all overdue Invoices:
