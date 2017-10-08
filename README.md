@@ -72,7 +72,7 @@ CREATE TABLE subscriptions
   subscription_tier_id INTEGER
 );
 
-CREATE TABLE Subscriber_Subscriptions
+CREATE TABLE subscriber_subscriptions
 (
   id INTEGER PRIMARY KEY,
   subscriber_id INTEGER,
@@ -89,7 +89,14 @@ FROM subscribers
 INNER JOIN streams ON streams.subscriber_id = subscribers.id
 INNER JOIN videos ON videos.id = streams.video_id
 WHERE streams.date = "January 2017"
-AND subscribers.id = -- insert subscriber.id
+AND subscribers.id = -- insert subscriber.id here
 GROUP BY videos.title
 ORDER BY streams DESC LIMIT 20;
 ```
+#### Algorithm
+The relationship between each table has been established via the models. Given that an Invoice belongs to a Subscriber and a Subscriber can have many Invoices, we can find each Subscriber with an overdue balance by filtering each Invoice that has a balance greater than 0 AND has a due_date that falls before today's date.
+
+to get all overdue invoices:
+* Invoices are initialized with a due_date, which will be determined by the start date of the Subscription. For example, a Subscriber with a Subscription whose start_date is March 1st can expect to have an Invoice with a due_date of April 1st. Filtering the Invoices whose balance is greater than 0 and have a due_date that is less than the current date will return a list of Invoices that are overdue:
+
+`overdue_invoices = Invoice.all.select { |invoice| invoice.balance > 0  && invoice.due_date < Time.zone.now }`
