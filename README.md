@@ -1,4 +1,4 @@
-testThis repo contains the relational database structure to support the Vidsi application requirements as well as a mini Rails application that can create, update, delete and select data from each of the tables. Table relations have been established through the models in the Rails API. Feel free to create subcribers, subscriptions, invoices, etc. via the rails console to make your own queries.
+This repo contains the relational database structure to support the Vidsi application requirements as well as a mini Rails application that can create, update, delete and select data from each of the tables. Table relations have been established through the models in the Rails API. Feel free to create subcribers, subscriptions, invoices, etc. via the rails console to make your own queries.
 * Migrate pending migration files with `rake db:migrate`
 * Start rails server with `rails s`
 * Enter rails console with `rails c`
