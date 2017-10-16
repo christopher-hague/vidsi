@@ -104,3 +104,4 @@ Find all Subscribers with an overdue balance:
 * Once we have the list of overdue Invoices, we can associate a Subscriber to the overdue Invoice using the `subscriber_id` foreign key on each Invoice:
 
 `overdue_subscribers = overdue_invoices.map { |invoice| Subscriber.find(invoice.subscriber_id) }.uniq`
+
